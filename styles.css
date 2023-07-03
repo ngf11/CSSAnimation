@@ -1,0 +1,49 @@
+body {
+  background-color: rgb(16, 16, 58);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: rgb(203, 25, 25);
+}
+
+span {
+  color: azure;
+  font-size: 3rem;
+}
+
+.logo {
+  opacity: 0;
+  transition: opacity 230ms ease-in-out;
+}
+
+.logo:hover {
+  opacity: 1;
+}
+
+.getWell {
+  border: 4px solid rgb(195, 2, 2);
+  gap: 2rem;
+  padding: 2rem;
+  animation: mySpinner 4s;
+  animation-iteration-count: infinite;
+}
+.logo2 {
+  animation: mySpinner 4s;
+  animation-iteration-count: infinite;
+}
+@keyframes mySpinner {
+  from {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(45deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
