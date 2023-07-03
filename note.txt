@@ -1,0 +1,80 @@
+Animation is the change from one CSS style to another over the dimation of time.
+every animation has two states. A starting point and and an ending point.
+When you move from start to finish CSS will calculate all the values in between. In computer sience this is called "in-betweening" or "tween animation"
+Imagin we have one element we want to fade in durning a duration of one second.
+when the animation starts the css will calculate an opacity value for every fram rander and it does so using a ;iniar time function. Whic it means the amount of change that occures to the CSS value is exactly the same as each unit of time.
+
+The easiest why is with a trasition.
+.logo{
+    opacity:0;
+    transition: opacity 230ms ease-out;
+}
+start by adding the transition property to a selector the first value is the property you want to animate in this case transition: opacity. the Opacity in the transition is the property. the second value is the duration. u can defind it in seconds or mili seconds.
+
+Now when ever the opacity for this element changes CSS will handel the animation.
+for example we can target the hover psudo selector, and change the opacity to to 1. thats all it takes to have a fade in fade out animation 
+
+.logo:hover{
+    opacity:1;
+}
+ we cna re find this animation by adding an aditional value for a delay or time or a timing function. Use a bulit in easing function or creat your own bezier curve. cubric-bazier()
+
+ but what if you want to animate something forever or in multiple steps. Keyframes  allow you to defind animations of the selector.
+
+ @Keyframes {
+
+ }
+
+ first give your Keyframes animation a name.
+
+  @Keyframes  mySpinner {
+     
+ }
+
+ then defind your statting styles with from{}; and your ending dtyles with to{}
+
+   @Keyframes  mySpinner {
+       from {
+            
+       }
+       to {
+
+       }
+ }
+ 
+ any intermidiant styles or steps in the animation  can be defind as a porcentage in reletive time  to the starting point
+
+
+   @Keyframes  mySpinner {
+       from {
+            
+       }
+       25%{
+           25% long * 4 sec. = 1sec.
+       }
+       to {
+           
+       }
+ }
+
+ you can use this animation by refering as the animation name. give it a timing function. Change the iteration count to infinate. to make it loop forever
+
+ .logo{
+     animation: mySpinner;
+     animation-iteration-count: infinate;
+ }
+
+
+   @Keyframes  mySpinner {
+       from {
+            transfrom: rotate(0deg)
+       }
+       25%{
+          transfrom: rotate(45deg)
+       }
+       to {
+           transfrom: rotate(360deg)
+       }
+ }
+
+ https://www.youtube.com/watch?v=HZHHBwzmJLk
